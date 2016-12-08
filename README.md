@@ -51,3 +51,59 @@ Manual pages:      http://www.petercorke.com/RTB/r9/html
 Please email bug reports, comments or code contribtions to me at rvc@petercorke.com
 
                                                             Peter Corke	
+# lmcallme:
+
+## install virtualenv, virtualenvwrapper:
+
+``` shell
+$ pip install virtualenv
+$ pip install virtualenvwrapper # linux
+$ pip install virtualenvwrapper-win # windows
+
+```
+
+when on Linux, put into ~/.bashrc:
+
+``` shell
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+```
+
+## setup
+
+### make env
+
+``` shell
+$ mkvirtualenv matlab
+```
+
+### use env
+
+``` shell
+$ workon matlab
+```
+
+### install jupyter notebook
+
+``` shell
+$ pip install -r requirements.txt
+$ python -m matlab_kernel install # install matlab_kernel for notebook
+```
+
+### use jupyter notebook
+
+Windows:
+
+``` shell
+$ set MATLAB_EXECUTABLE="C:\Program Files\MATLAB\R2014a\bin\matlab.exe"
+$ jupyter notebook
+```
+
+Linux:
+
+``` shell
+$ export MATLAB_EXECUTABLE=/Applications/MATLAB_2015b.app/bin/matlab
+$ jupyter notebook
+```
